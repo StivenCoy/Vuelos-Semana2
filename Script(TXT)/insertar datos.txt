@@ -1,3 +1,5 @@
+//se insertaron valores a todo el modelo incluyendo 7 rutas 
+
 INSERT INTO `vuelos_semillero`.`cliente` (`idcliente`, `nombre`, `fechaNacimiento`, `telefono`, `email`) VALUES ('109487635', 'sebastian bohorquez', '2003-06-03', '3214572889', 'sebas@gmail.com');
 INSERT INTO `vuelos_semillero`.`cliente` (`idcliente`, `nombre`, `fechaNacimiento`, `telefono`, `email`) VALUES ('19836745', 'camilo gutierrez', '1998-11-25', '3145278385', 'camilo@gmail.com');
 INSERT INTO `vuelos_semillero`.`cliente` (`idcliente`, `nombre`, `fechaNacimiento`, `telefono`, `email`) VALUES ('109364237', 'huber campos', '1985-09-27', '3126835333', 'huber@gmail.com');
