@@ -1,0 +1,225 @@
+CREATE TABLE `vuelos_semillero`.`pasaje` (
+  `idpasaje` INT NOT NULL AUTO_INCREMENT,
+  `clase` VARCHAR(45) NOT NULL,
+  `silla` VARCHAR(45) NOT NULL,
+  `valor` DECIMAL(20) NOT NULL,
+  `fechaCompra` VARCHAR(45) NOT NULL,
+  `horaCompra` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idpasaje`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+
+
+CREATE TABLE `vuelos_semillero`.`cliente` (
+  `idcliente` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NOT NULL,
+  `fechaNacimiento` VARCHAR(45) NOT NULL,
+  `telefono` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idcliente`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+
+
+CREATE TABLE `vuelos_semillero`.`tripulacion` (
+  `idtripulacion` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NOT NULL,
+  `fechaNacimiento` VARCHAR(45) NOT NULL,
+  `telefono` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `cargo` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idtripulacion`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+
+CREATE TABLE `vuelos_semillero`.`avion` (
+  `idavion` INT NOT NULL AUTO_INCREMENT,
+  `capacidad` INT NOT NULL,
+  `Modelo` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idavion`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+
+CREATE TABLE `vuelos_semillero`.`aerolinea` (
+  `idaerolinea` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NOT NULL,
+  `fechaNacimiento` VARCHAR(45) NOT NULL,
+  `aerolineacol` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idaerolinea`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+CREATE TABLE `vuelos_semillero`.`vuelo` (
+  `idvuelo` INT NOT NULL AUTO_INCREMENT,
+  `numeroVuelo` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idvuelo`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+
+CREATE TABLE `vuelos_semillero`.`ruta` (
+  `idruta` INT NOT NULL AUTO_INCREMENT,
+  `ciudadOrigen` VARCHAR(45) NOT NULL,
+  `ciudadDestino` VARCHAR(45) NOT NULL,
+  `fechaVuelo` DATE NOT NULL,
+  `fechaLlegada` DATE NOT NULL,
+  `horaSalida` VARCHAR(45) NOT NULL,
+  `horaLlegada` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idruta`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+
+
+
+CREATE TABLE `vuelos_semillero`.`tripulacion-vuelo` (
+  `idtripulacion-vuelo` INT NOT NULL,
+  PRIMARY KEY (`idtripulacion-vuelo`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+
+CREATE TABLE `vuelos_semillero`.`aeropuerto` (
+  `idaeropuerto` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NOT NULL,
+  `pais` VARCHAR(45) NOT NULL,
+  `ciudad` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idaeropuerto`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+
+CREATE TABLE `vuelos_semillero`.`aeropuerto-aerolinea` (
+  `idaeropuerto-aerolinea` INT NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`idaeropuerto-aerolinea`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+
+
+ALTER TABLE `vuelos_semillero`.`aeropuerto-aerolinea` 
+ADD COLUMN `idAerolinea` INT NOT NULL AFTER `idaeropuerto-aerolinea`,
+ADD COLUMN `idAeropuerto` INT NOT NULL AFTER `idAerolinea`,
+ADD INDEX `fk_aeropuerto-aerolinea_aerolinea_id_idx` (`idAerolinea` ASC) VISIBLE,
+ADD INDEX `fk_aeropuerto-aerolinea_aeropuerto_id_idx` (`idAeropuerto` ASC) VISIBLE;
+;
+ALTER TABLE `vuelos_semillero`.`aeropuerto-aerolinea` 
+ADD CONSTRAINT `fk_aeropuerto-aerolinea_aerolinea_id`
+  FOREIGN KEY (`idAerolinea`)
+  REFERENCES `vuelos_semillero`.`aerolinea` (`idaerolinea`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE,
+ADD CONSTRAINT `fk_aeropuerto-aerolinea_aeropuerto_id`
+  FOREIGN KEY (`idAeropuerto`)
+  REFERENCES `vuelos_semillero`.`aeropuerto` (`idaeropuerto`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE;
+
+
+
+
+
+CREATE TABLE `vuelos_semillero`.`vuelo-tripulacion` (
+  `idvuelo-tripulacion` INT NOT NULL AUTO_INCREMENT,
+  `idTripulacion` INT NOT NULL,
+  `idVuelo` INT NOT NULL,
+  PRIMARY KEY (`idvuelo-tripulacion`),
+  INDEX `fk_vuelo-tripulante_vuelo_id_idx` (`idVuelo` ASC) VISIBLE,
+  INDEX `fk_vuelo-tripulante_tripulante_id_idx` (`idTripulacion` ASC) VISIBLE,
+  CONSTRAINT `fk_vuelo-tripulante_vuelo_id`
+    FOREIGN KEY (`idVuelo`)
+    REFERENCES `vuelos_semillero`.`vuelo` (`idvuelo`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_vuelo-tripulante_tripulante_id`
+    FOREIGN KEY (`idTripulacion`)
+    REFERENCES `vuelos_semillero`.`tripulante` (`idtripulante`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+ALTER TABLE `vuelos_semillero`.`vuelo` 
+ADD COLUMN `idAerolinea` INT NOT NULL AFTER `numeroVuelo`,
+ADD COLUMN `idAvion` INT NOT NULL AFTER `idAerolinea`,
+ADD INDEX `fk_vuelo_aerolinea_id_idx` (`idAerolinea` ASC) VISIBLE,
+ADD INDEX `fk_vuelo_avion_id_idx` (`idAvion` ASC) VISIBLE;
+;
+
+
+
+
+ALTER TABLE `vuelos_semillero`.`vuelo` 
+ADD CONSTRAINT `fk_vuelo_aerolinea_id`
+  FOREIGN KEY (`idAerolinea`)
+  REFERENCES `vuelos_semillero`.`aerolinea` (`idaerolinea`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE,
+ADD CONSTRAINT `fk_vuelo_avion_id`
+  FOREIGN KEY (`idAvion`)
+  REFERENCES `vuelos_semillero`.`avion` (`idavion`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE;
+
+
+
+
+ALTER TABLE `vuelos_semillero`.`ruta` 
+ADD COLUMN `idVuelo` INT NOT NULL AFTER `horaLlegada`,
+ADD INDEX `fk_ruta_vuelo_id_idx` (`idVuelo` ASC) VISIBLE;
+;
+
+
+ALTER TABLE `vuelos_semillero`.`ruta` 
+ADD CONSTRAINT `fk_ruta_vuelo_id`
+  FOREIGN KEY (`idVuelo`)
+  REFERENCES `vuelos_semillero`.`vuelo` (`idvuelo`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE;
+
+
+
+
+
+
+ALTER TABLE `vuelos_semillero`.`pasaje` 
+ADD COLUMN `idCliente` INT NOT NULL AFTER `horaCompra`,
+ADD COLUMN `idVuelo` INT NOT NULL AFTER `idCliente`,
+ADD INDEX `fk_pasaje_cliente_id_idx` (`idCliente` ASC) VISIBLE,
+ADD INDEX `fk_pasaje_vuelo_id_idx` (`idVuelo` ASC) VISIBLE;
+;
+
+
+
+ALTER TABLE `vuelos_semillero`.`pasaje` 
+ADD CONSTRAINT `fk_pasaje_cliente_id`
+  FOREIGN KEY (`idCliente`)
+  REFERENCES `vuelos_semillero`.`cliente` (`idcliente`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE,
+ADD CONSTRAINT `fk_pasaje_vuelo_id`
+  FOREIGN KEY (`idVuelo`)
+  REFERENCES `vuelos_semillero`.`vuelo` (`idvuelo`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE;

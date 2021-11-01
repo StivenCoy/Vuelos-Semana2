@@ -1,0 +1,89 @@
+INSERT INTO `vuelos_semillero`.`cliente` (`idcliente`, `nombre`, `fechaNacimiento`, `telefono`, `email`) VALUES ('109487635', 'sebastian bohorquez', '2003-06-03', '3214572889', 'sebas@gmail.com');
+INSERT INTO `vuelos_semillero`.`cliente` (`idcliente`, `nombre`, `fechaNacimiento`, `telefono`, `email`) VALUES ('19836745', 'camilo gutierrez', '1998-11-25', '3145278385', 'camilo@gmail.com');
+INSERT INTO `vuelos_semillero`.`cliente` (`idcliente`, `nombre`, `fechaNacimiento`, `telefono`, `email`) VALUES ('109364237', 'huber campos', '1985-09-27', '3126835333', 'huber@gmail.com');
+INSERT INTO `vuelos_semillero`.`cliente` (`idcliente`, `nombre`, `fechaNacimiento`, `telefono`, `email`) VALUES ('1093642433', 'marleny alvarez ', '1979-05-29', '3115267356', 'marleny@gmail.com');
+INSERT INTO `vuelos_semillero`.`cliente` (`idcliente`, `nombre`, `fechaNacimiento`, `telefono`, `email`) VALUES ('24673833', 'alejandra santana', '1994-04-01', '3125365267', 'alejandra@gmail.com');
+INSERT INTO `vuelos_semillero`.`cliente` (`idcliente`, `nombre`, `fechaNacimiento`, `telefono`, `email`) VALUES ('243796332', 'camila corredor', '1968-12-12', '3112537489', 'camila@gmail.com');
+
+
+
+
+INSERT INTO `vuelos_semillero`.`aerolinea` (`idaerolinea`, `nombre`, `telefono`) VALUES ('1', 'avianca', '73546282');
+INSERT INTO `vuelos_semillero`.`aerolinea` (`idaerolinea`, `nombre`, `telefono`) VALUES ('2', 'lan', '7356892');
+INSERT INTO `vuelos_semillero`.`aerolinea` (`idaerolinea`, `nombre`, `telefono`) VALUES ('3', 'Airways', '7362572');
+INSERT INTO `vuelos_semillero`.`aerolinea` (`idaerolinea`, `nombre`, `telefono`) VALUES ('4', 'Singapore Airlines', '7345271');
+INSERT INTO `vuelos_semillero`.`aerolinea` (`idaerolinea`, `nombre`, `telefono`) VALUES ('5', 'Cathay Pacific', '7445624');
+INSERT INTO `vuelos_semillero`.`aerolinea` (`idaerolinea`, `nombre`, `telefono`) VALUES ('6', 'Etihad', '7562412');
+
+
+INSERT INTO `vuelos_semillero`.`aeropuerto` (`idaeropuerto`, `nombre`, `pais`, `ciudad`) VALUES ('1', 'Aeropuerto Internacional El Dorado (BOG)', 'Colombia', 'Bogota');
+INSERT INTO `vuelos_semillero`.`aeropuerto` (`idaeropuerto`, `nombre`, `pais`, `ciudad`) VALUES ('2', 'Aeropuerto Internacional El Edén', 'Colombia', 'Armenia');
+INSERT INTO `vuelos_semillero`.`aeropuerto` (`idaeropuerto`, `nombre`, `pais`, `ciudad`) VALUES ('3', 'Aeropuerto Internacional Matecaña ', 'Colombia', 'Barranquilla');
+INSERT INTO `vuelos_semillero`.`aeropuerto` (`idaeropuerto`, `nombre`, `pais`, `ciudad`) VALUES ('4', 'Aeropuerto Internacional Palonegro', 'Colombia', 'Bucaramanga');
+INSERT INTO `vuelos_semillero`.`aeropuerto` (`idaeropuerto`, `nombre`, `pais`, `ciudad`) VALUES ('5', 'Aeropuerto Internacional Jorge Chávez (LIM)', 'Peru', 'Lima');
+INSERT INTO `vuelos_semillero`.`aeropuerto` (`idaeropuerto`, `nombre`, `pais`, `ciudad`) VALUES ('6', 'Aeropuerto Internacional de Galeão (GIG)', 'Brasil', 'Rio de janeiro');
+
+
+
+
+INSERT INTO `vuelos_semillero`.`avion` (`idavion`, `capacidad`, `Modelo`) VALUES ('1', '416', 'Boeing 747');
+INSERT INTO `vuelos_semillero`.`avion` (`idavion`, `capacidad`, `Modelo`) VALUES ('2', '375', ' Airbus A340');
+INSERT INTO `vuelos_semillero`.`avion` (`idavion`, `capacidad`, `Modelo`) VALUES ('3', '375', 'Boeing 767');
+INSERT INTO `vuelos_semillero`.`avion` (`idavion`, `capacidad`, `Modelo`) VALUES ('4', '335', 'Airbus A330');
+INSERT INTO `vuelos_semillero`.`avion` (`idavion`, `capacidad`, `Modelo`) VALUES ('5', '289', 'Boeing 757');
+INSERT INTO `vuelos_semillero`.`avion` (`idavion`, `capacidad`, `Modelo`) VALUES ('6', '220', 'Airbus A320');
+
+
+
+INSERT INTO `vuelos_semillero`.`aeropuerto-aerolinea` (`idaeropuerto-aerolinea`, `idAerolinea`, `idAeropuerto`) VALUES ('12', '1', '1');
+INSERT INTO `vuelos_semillero`.`aeropuerto-aerolinea` (`idaeropuerto-aerolinea`, `idAerolinea`, `idAeropuerto`) VALUES ('23', '2', '2');
+INSERT INTO `vuelos_semillero`.`aeropuerto-aerolinea` (`idaeropuerto-aerolinea`, `idAerolinea`, `idAeropuerto`) VALUES ('34', '3', '3');
+INSERT INTO `vuelos_semillero`.`aeropuerto-aerolinea` (`idaeropuerto-aerolinea`, `idAerolinea`, `idAeropuerto`) VALUES ('45', '4', '4');
+INSERT INTO `vuelos_semillero`.`aeropuerto-aerolinea` (`idaeropuerto-aerolinea`, `idAerolinea`, `idAeropuerto`) VALUES ('56', '5', '5');
+INSERT INTO `vuelos_semillero`.`aeropuerto-aerolinea` (`idaeropuerto-aerolinea`, `idAerolinea`, `idAeropuerto`) VALUES ('67', '6', '6');
+
+
+
+INSERT INTO `vuelos_semillero`.`tripulante` (`idtripulante`, `nombre`, `fechaNacimiento`, `telefono`, `email`, `cargo`) VALUES ('109873625', 'Carlos Beltran', '1990-07-02', '3215678290', 'carlos@gmail.com', 'copiloto');
+INSERT INTO `vuelos_semillero`.`tripulante` (`idtripulante`, `nombre`, `fechaNacimiento`, `telefono`, `email`, `cargo`) VALUES ('189365394', 'Andres Roa', '1985-09-21', '7372972', 'andres@gmail.com', 'piloto');
+INSERT INTO `vuelos_semillero`.`tripulante` (`idtripulante`, `nombre`, `fechaNacimiento`, `telefono`, `email`, `cargo`) VALUES ('354802', 'Clarena Alvarez', '1991-05-04', '7624735', 'clarenagmail.com', 'azafata');
+INSERT INTO `vuelos_semillero`.`tripulante` (`idtripulante`, `nombre`, `fechaNacimiento`, `telefono`, `email`, `cargo`) VALUES ('346242', 'valentina martines', '1986-09-27', '3215638632', 'valentina@gmail.com', 'azafata');
+INSERT INTO `vuelos_semillero`.`tripulante` (`idtripulante`, `nombre`, `fechaNacimiento`, `telefono`, `email`, `cargo`) VALUES ('2463853', 'Camila Bermudes', '1999-10-21', '3215683622', 'camila@gmail.com', 'azafata');
+
+
+
+
+INSERT INTO `vuelos_semillero`.`vuelo` (`idvuelo`, `numeroVuelo`, `idAerolinea`, `idAvion`) VALUES ('1', '1', '1', '1');
+INSERT INTO `vuelos_semillero`.`vuelo` (`idvuelo`, `numeroVuelo`, `idAerolinea`, `idAvion`) VALUES ('2', '2', '2', '2');
+INSERT INTO `vuelos_semillero`.`vuelo` (`idvuelo`, `numeroVuelo`, `idAerolinea`, `idAvion`) VALUES ('3', '3', '3', '3');
+INSERT INTO `vuelos_semillero`.`vuelo` (`idvuelo`, `numeroVuelo`, `idAerolinea`, `idAvion`) VALUES ('4', '4', '4', '4');
+INSERT INTO `vuelos_semillero`.`vuelo` (`idvuelo`, `numeroVuelo`, `idAerolinea`, `idAvion`) VALUES ('5', '5', '5', '5');
+INSERT INTO `vuelos_semillero`.`vuelo` (`idvuelo`, `numeroVuelo`, `idAerolinea`, `idAvion`) VALUES ('6', '6', '6', '6');
+
+
+
+
+INSERT INTO `vuelos_semillero`.`vuelo-tripulacion` (`idvuelo-tripulacion`, `idTripulacion`, `idVuelo`) VALUES ('1', '346242', '1');
+INSERT INTO `vuelos_semillero`.`vuelo-tripulacion` (`idvuelo-tripulacion`, `idTripulacion`, `idVuelo`) VALUES ('2', '354802', '2');
+INSERT INTO `vuelos_semillero`.`vuelo-tripulacion` (`idvuelo-tripulacion`, `idTripulacion`, `idVuelo`) VALUES ('3', '2463853', '3');
+INSERT INTO `vuelos_semillero`.`vuelo-tripulacion` (`idvuelo-tripulacion`, `idTripulacion`, `idVuelo`) VALUES ('4', '109873625', '4');
+INSERT INTO `vuelos_semillero`.`vuelo-tripulacion` (`idvuelo-tripulacion`, `idTripulacion`, `idVuelo`) VALUES ('5', '189365394', '5');
+
+
+
+INSERT INTO `vuelos_semillero`.`ruta` (`idruta`, `ciudadOrigen`, `ciudadDestino`, `fechaVuelo`, `fechaLlegada`, `horaSalida`, `horaLlegada`, `idVuelo`) VALUES ('1', 'Armenia', 'Bogota', '2021-01-11', '2021-01-11', '5:30 pm', '6:10 pm', '1');
+INSERT INTO `vuelos_semillero`.`ruta` (`idruta`, `ciudadOrigen`, `ciudadDestino`, `fechaVuelo`, `fechaLlegada`, `horaSalida`, `horaLlegada`, `idVuelo`) VALUES ('2', 'Bogota', 'Barranquilla', '2021-02-11', '2021-02-11', '6:15 am', '7: 20 am', '1');
+INSERT INTO `vuelos_semillero`.`ruta` (`idruta`, `ciudadOrigen`, `ciudadDestino`, `fechaVuelo`, `fechaLlegada`, `horaSalida`, `horaLlegada`, `idVuelo`) VALUES ('3', 'Barranquilla', 'Bucaramanga', '2021-02-11', '2021-02-11', '12:10 pm', '1: 30 pm', '1');
+INSERT INTO `vuelos_semillero`.`ruta` (`idruta`, `ciudadOrigen`, `ciudadDestino`, `fechaVuelo`, `fechaLlegada`, `horaSalida`, `horaLlegada`, `idVuelo`) VALUES ('4', 'Bucaramanga', 'Lima', '2021-03-11', '2021-03-11', '7:10 am', '8: 15 am', '1');
+INSERT INTO `vuelos_semillero`.`ruta` (`idruta`, `ciudadOrigen`, `ciudadDestino`, `fechaVuelo`, `fechaLlegada`, `horaSalida`, `horaLlegada`, `idVuelo`) VALUES ('5', 'lima', 'Rio de janeiro', '2021-04-11', '2021-04-11', '8:00 am', '9: 00 am', '1');
+INSERT INTO `vuelos_semillero`.`ruta` (`idruta`, `ciudadOrigen`, `ciudadDestino`, `fechaVuelo`, `fechaLlegada`, `horaSalida`, `horaLlegada`, `idVuelo`) VALUES ('6', 'Rio de janeiro', 'Bogota', '2021-04-11', '2021-04-11', '7: 00 pm', '8: 20 am', '1');
+INSERT INTO `vuelos_semillero`.`ruta` (`idruta`, `ciudadOrigen`, `ciudadDestino`, `fechaVuelo`, `fechaLlegada`, `horaSalida`, `horaLlegada`, `idVuelo`) VALUES ('7', 'Bogota ', 'Armenia', '2021-05-11', '2021-05-11', '10:00 am', '10:45 am', '1');
+
+
+
+INSERT INTO `vuelos_semillero`.`pasaje` (`idpasaje`, `clase`, `silla`, `valor`, `fechaCompra`, `horaCompra`, `idCliente`, `idVuelo`) VALUES ('1', 'Ejecutivo', '1a', '350.000', '2021-11-01', '7:00 am', '19836745', '1');
+INSERT INTO `vuelos_semillero`.`pasaje` (`idpasaje`, `clase`, `silla`, `valor`, `fechaCompra`, `horaCompra`, `idCliente`, `idVuelo`) VALUES ('2', 'Ejecutivo', '2b', '350.000', '2021-11-01', '7:15 am', '24673833', '1');
+INSERT INTO `vuelos_semillero`.`pasaje` (`idpasaje`, `clase`, `silla`, `valor`, `fechaCompra`, `horaCompra`, `idCliente`, `idVuelo`) VALUES ('3', 'Ejecutivo', '3b', '350.000', '2021-11-01', '8:00 am', '109364237', '1');
+INSERT INTO `vuelos_semillero`.`pasaje` (`idpasaje`, `clase`, `silla`, `valor`, `fechaCompra`, `horaCompra`, `idCliente`, `idVuelo`) VALUES ('4', 'Ejecutivo', '4b', '350.000', '2021-11-01', '8:20 am', '109487635', '1');
+INSERT INTO `vuelos_semillero`.`pasaje` (`idpasaje`, `clase`, `silla`, `valor`, `fechaCompra`, `horaCompra`, `idCliente`, `idVuelo`) VALUES ('5', 'Ejecutivo', '5b', '350.000', '2021-11-01', '10:00 am', '243796332', '1');
+INSERT INTO `vuelos_semillero`.`pasaje` (`idpasaje`, `clase`, `silla`, `valor`, `fechaCompra`, `horaCompra`, `idCliente`, `idVuelo`) VALUES ('6', 'Ejecutivo', '6b', '350.000', '2021-11-01', '10:50 am', '1093642433', '1');
